@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random cutecats Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: yellow;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: yellow;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+#cutecats-container {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cutecats-container img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #5a6268;
+}
+
+    </style>
+<body>
+  <div class="container">
+    <h1>Random Cats Generator</h1>
+    <div id="cutecats-container">
+      <p> cutecats will appear here</p>
+    </div>
+    <button id="generate-btn">Generate cutecats</button>
+  </div>
+  <script>
+      const cutecats = [
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5k067g9GnGhi2Akznix-ym2U_CLEUtdVgdunboW29UwGv3I6dkhh-q98N&s=10',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0ejMyImskfZh9girZ4i5s3diRldr_0i0RXg&usqp=CAU',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkq3kCc3FsPCsPNPaoigqbwqqbDrCWuSvXA8Yl8plDuIKA9C8LPBaNrzhJ&s=10'
+];
+
+document.getElementById('generate-btn').addEventListener('click', () => {
+  const randomIndex = Math.floor(Math.random() * cutecats.length);
+  const memeContainer = document.getElementById('cutecats-container');
+  memeContainer.innerHTML = `<img src="${cutecats[randomIndex]}" alt="cutecats">`;
+});
+
+  </script>
+</body>
+</html>
